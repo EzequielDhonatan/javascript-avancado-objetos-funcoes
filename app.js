@@ -1,32 +1,17 @@
-var ezequiel = {
-    name: 'Ezequiel',
-    lastName: 'Dhonatan',
+function Pessoa (name, lastName) {
+    this.name = name;
+    this.lastName = lastName;
 
-    fullName: function () {
+    this.fullName = function () {
         return `${this.name} - ${this.lastName}`
     }
 }
 
+var ezequiel = new Pessoa('Ezequiel', 'Dhonatan');
 console.log(ezequiel.fullName());
 
-var outro = {
-    name: 'Outro',
-    lastName: 'Dhonatan',
-
-    fullName: function () {
-        return `${this.name} - ${this.lastName}`
-    }
-}
-
+var outro = new Pessoa('Outro', 'Dhonatan');
 console.log(outro.fullName());
 
-var outro2 = {
-    name: 'Outro 2',
-    lastName: 'Dhonatan',
-
-    fullName: function () {
-        return `${this.name} - ${this.lastName}`
-    }
-}
-
-console.log(outro2.fullName());
+var outroNovo = new Pessoa('Outro Novo', 'Dhonatan');
+console.log(outroNovo.fullName());
