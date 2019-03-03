@@ -1,16 +1,18 @@
-function People () {
-    this._name
+class People {
 
-    this.setName = function (value) {
+    constructor () {
+        this._name
+    }
+
+    set name (value) {
         this._name = value.toUpperCase()
     }
 
-    this.getName = function () {
+    get name () {
         return this._name
     }
-
 }
 
-var ezequiel = new People
-ezequiel.setName('Ezequiel');
-console.log(ezequiel.getName());
+let ezequiel = new People
+ezequiel.name = 'Ezequiel'
+console.log(ezequiel.name)
