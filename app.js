@@ -1,49 +1,16 @@
-class Conta {
-    constructor(numero, titular) {
-        this.numero = numero
-        this.titular = titular
+function People () {
+    this._name
 
-        this.saldo = 0
+    this.setName = function (value) {
+        this._name = value.toUpperCase()
     }
 
-    deposita (valor) {
-        this.saldo += (valor)
-    }
-
-    saque (valor) {
-        if (this.saldo > 0 && this.saldo >= valor) {
-            this.saldo -= valor
-        } else {
-            console.log(`Saque não permitido, saldo atual ${this.saldo}, valor de tentativa de saque: ${valor}`);
-        }
-    }
-
-    getSaldo () {
-        return this.saldo
+    this.getName = function () {
+        return this._name
     }
 
 }
 
-class ContaCorrente extends Conta {
-    constructor(numero, titular) {
-        super (numero, titular)
-    }
-}
-
-class ContaPoupanca extends Conta {
-    constructor(numero, titular) {
-        super (numero, titular)
-    }
-}
-
-let ezequiel = new ContaCorrente('Ezequiel Dhonatan', 123456);
-console.log(ezequiel.getSaldo());
-ezequiel.deposita(100);
-ezequiel.saque(50);
-ezequiel.deposita(100);
-console.log(ezequiel.getSaldo());
-
-let outro = new ContaPoupanca('Outro Dhonatan', 123456);
-console.log(outro.getSaldo());
-outro.deposita(100);
-console.log(outro.getSaldo());
+var ezequiel = new People
+ezequiel.setName('Ezequiel');
+console.log(ezequiel.getName());
