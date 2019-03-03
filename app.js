@@ -1,14 +1,32 @@
-// ES6
-class Pessoa {
-    constructor(name, lastName) {
-        this.name = name
-        this.lastName = lastName
-    }
+var ezequiel = new pFis ('Ezequiel', 'Dhonatan', 156162);
 
-    fullName () {
+function Pessoa (name, lastName) {
+    this.name = name
+    this.lastName =     lastName
+
+    this.showInfo = function () {
         return `${this.name} ${this.lastName}`
     }
 }
 
-let ezequiel = new Pessoa('Ezequiel', 'Dhonatan');
-console.log(ezequiel.fullName());
+function pFis (name, lastName, cpf) {
+    Pessoa.call(this, name, lastName)
+
+    this.cpf = cpf
+}
+
+console.log(ezequiel.showInfo());
+// pFis.prototype = new Pessoa ();
+
+
+/* ############################################## */
+
+var empresa = new pFis ('Eze', 'Dhon', 156162);
+
+function pJur (name, lastName, cnpj) {
+    Pessoa.call(this, name, lastName)
+
+    this.cnpj = cnpj
+}
+
+console.log(empresa.showInfo());
