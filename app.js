@@ -1,18 +1,10 @@
-class People {
-
-    constructor () {
-        this._name
-    }
-
-    set name (value) {
-        this._name = value.toUpperCase()
-    }
-
-    get name () {
-        return this._name
-    }
+function DateConverter () {
 }
 
-let ezequiel = new People
-ezequiel.name = 'Ezequiel'
-console.log(ezequiel.name)
+DateConverter.ptBr = function (date) {
+    // 'YYYY-mm-dd' => 'dd/mm/YYYY'
+    return date.split('-').reverse().join('/')
+}
+
+var date = DateConverter.ptBr('2019-03-03')
+console.log(date)
