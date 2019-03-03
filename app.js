@@ -1,39 +1,34 @@
-class Pessoa {
-    constructor (name, lastName) {
-        this.name = name
-        this.lastName = lastName
-    }
+function Pessoa (name, lastName) {
+    this.name = name
+    this.lastName =     lastName
 
-    showInfo () {
+    this.showInfo = function () {
         return `${this.name} ${this.lastName}`
     }
 }
 
-class Pfis extends Pessoa {
-    constructor (name, lastName, cpf) {
-        super(name, lastName)
+function PFis (name, lastName, cpf) {
+    Pessoa.call(this, name, lastName)
 
-        this.cpf = cpf
-    }
+    this.cpf = cpf
 }
 
-let ezequiel = new Pfis('Ezequiel', 'Dhonatan', 1655156165);
+var ezequiel = new PFis ('Ezequiel', 'Dhonatan', 156162);
 console.log(ezequiel.showInfo());
+// PFis.prototype = new Pessoa ();
 
-class Pjur extends Pessoa {
-    constructor (name, lastName) {
-        super(name, lastName)
-    }
 
-    setCnpj (cnpj) {
-        this.cnpj = cnpj
-    }
+/* ############################################## */
 
-    getCnpj () {
-        return this.cnpj
+function PJur (name, lastName, cnpj) {
+    Pessoa.call(this, name, lastName)
+
+    this.cnpj = cnpj
+
+    this.showInfo = function () {
+        return `Empresa: ${this.name}${this.lastName}` 
     }
 }
 
-let empresa = new Pjur('Eze', 'Dhon', 1125119811);
-empresa.setCnpj(1561156165165);
-console.log(empresa.getCnpj());
+var empresa = new PJur ('Eze', 'Dhon', 156162);
+console.log(empresa.showInfo());
